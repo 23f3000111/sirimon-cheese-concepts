@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sirimon Cheese | Two website concepts</title>
+<meta name="description" content="Two website concepts for Sirimon Cheese, artisan cheese from Laikipia: an editorial direction and a lively direction.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF7E9">
+<link rel="icon" href="shared/img/favicon.png">
+<link rel="apple-touch-icon" href="shared/img/apple-touch-icon.png">
+<link rel="preload" href="shared/fonts/oswald-200-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="shared/fonts/clash-display-700.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: 'Oswald'; src: url('shared/fonts/oswald-200-700.woff2') format('woff2'); font-weight: 200 700; font-display: swap; }
+  @font-face { font-family: 'Figtree'; src: url('shared/fonts/figtree-300-900.woff2') format('woff2'); font-weight: 300 900; font-display: swap; }
+  @font-face { font-family: 'IBM Plex Mono'; src: url('shared/fonts/plex-mono-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+  @font-face { font-family: 'Clash Display'; src: url('shared/fonts/clash-display-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  @font-face { font-family: 'Satoshi'; src: url('shared/fonts/satoshi-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  :root { --ink: #1A1714; --text: #54493F; --paper: #FFF7E9; --gold: #FFC529; --pink: #EE2A7B; --red: #E2231A; --blue: #1F6FEB; --ease: cubic-bezier(.16, 1, .3, 1); --spring: cubic-bezier(.3, 1.5, .5, 1); }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--text); font: 450 17px/1.55 'Figtree', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; height: auto; }
+  .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+  .bg i { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .5; animation: drift 18s ease-in-out infinite alternate; }
+  .bg i:nth-child(1) { width: 520px; height: 520px; left: -140px; top: -160px; background: var(--gold); }
+  .bg i:nth-child(2) { width: 460px; height: 460px; right: -140px; top: 26%; background: #FF9CC4; animation-duration: 22s; }
+  .bg i:nth-child(3) { width: 400px; height: 400px; left: 32%; bottom: -230px; background: #9FD2FF; animation-duration: 26s; }
+  @keyframes drift { to { transform: translate(60px, 40px) scale(1.12); } }
+  .wrap { width: min(1260px, 100% - 64px); margin: 0 auto; padding: 34px 0 56px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { display: flex; align-items: center; gap: 16px; }
+  .brand img { width: 92px; filter: drop-shadow(0 10px 14px rgba(60, 30, 0, .25)); }
+  .brand strong { display: block; font: 700 18px/1.2 'Figtree', sans-serif; color: var(--ink); }
+  .brand span { font-size: 14px; }
+  .chip { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border-radius: 999px; background: #fff; font: 600 13.5px/1 'Figtree', sans-serif; color: var(--ink); box-shadow: 0 6px 18px -10px rgba(80, 40, 10, .35); }
+  .chip i { width: 8px; height: 8px; border-radius: 50%; background: #25D366; box-shadow: 0 0 0 0 rgba(37, 211, 102, .6); animation: ping 1.8s infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); } }
+  h1 { margin: 50px 0 0; max-width: 18ch; font: 600 clamp(54px, 6.6vw, 106px)/.9 'Oswald', sans-serif; text-transform: uppercase; color: var(--ink); }
+  h1 span { color: var(--pink); }
+  .intro { margin: 22px 0 0; max-width: 66ch; font-size: 18.5px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 46px; }
+  .card { position: relative; display: flex; flex-direction: column; border-radius: 30px; background: #fff; color: inherit; text-decoration: none; overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(40, 18, 10, .05), 0 12px 24px -12px rgba(80, 40, 10, .2), 0 50px 70px -40px rgba(80, 40, 10, .45);
+    transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px)); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+  .card:hover, .card:focus-visible { --lift: -10px; }
+  .card:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
+  .shot { position: relative; margin: 12px 12px 0; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 10; background: #f4ece0; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.2s var(--ease); }
+  .card:hover .shot img { transform: scale(1.045); }
+  .shot b { position: absolute; left: 14px; top: 14px; padding: 8px 12px; border-radius: 999px; background: rgba(255, 255, 255, .94); font: 700 12.5px/1 'Figtree', sans-serif; color: var(--ink); }
+  .body { display: grid; gap: 10px; padding: 24px 28px 28px; }
+  .label { font: 500 12.5px/1 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .1em; color: #8A7868; }
+  .title { font: 600 54px/.9 'Oswald', sans-serif; text-transform: uppercase; color: var(--ink); }
+  .card--b .title { font: 700 54px/.92 'Clash Display', sans-serif; text-transform: none; letter-spacing: -.02em; color: var(--pink); }
+  .desc { font-size: 16px; max-width: 54ch; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags span { padding: 6px 11px; border-radius: 999px; background: #FFF1D6; font: 600 12.5px/1 'Figtree', sans-serif; color: var(--ink); }
+  .card--b .tags span { background: #FFE3EF; }
+  .go { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; width: max-content; height: 50px; padding: 0 24px; border-radius: 4px; color: #fff; background: var(--red);
+    font: 700 13px/1 'Figtree', sans-serif; letter-spacing: .08em; text-transform: uppercase; transition: gap .3s var(--spring); }
+  .card--b .go { background: var(--pink); border-radius: 999px; font: 700 16px/1 'Satoshi', sans-serif; letter-spacing: 0; text-transform: none; }
+  .card:hover .go { gap: 16px; }
+  .shared { margin-top: 46px; padding: 24px 28px; border-radius: 24px; background: rgba(255, 255, 255, .72); display: grid; grid-template-columns: auto 1fr; gap: 10px 26px; align-items: start; }
+  .shared strong { font: 700 15px/1.4 'Figtree', sans-serif; color: var(--ink); }
+  .shared ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+  .shared li::before { content: '\2713'; margin-right: 7px; color: #1FA855; font-weight: 700; }
+  .demo { margin-top: 16px; font-size: 14.5px; }
+  .demo code { padding: 3px 7px; border-radius: 6px; background: #fff; font: 500 13px 'IBM Plex Mono', monospace; color: var(--ink); }
+  footer { margin-top: 30px; font-size: 13.5px; color: #8A7868; }
+  @media (max-width: 900px) { .grid, .shared { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .bg i, .chip i { animation: none; } .card, .shot img, .go { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <header>
+      <div class="brand"><img src="shared/img/logo/badge.webp" alt="Sirimon Cheese, naturally extraordinary" width="520" height="425"><div><strong>Sirimon Cheese</strong><span>Website concepts &middot; November 2026</span></div></div>
+      <span class="chip"><i></i>Both concepts are live and working</span>
+    </header>
+    <h1>Two ways to make Kenya <span>say cheese</span></h1>
+    <p class="intro">Both concepts carry the same content and features: every Sirimon cheese and jar at today&rsquo;s shop prices, melting-cheese film and photography, 23 recipes from Sirimon&rsquo;s own recipe bank, a cheese list that orders on WhatsApp with real Nairobi delivery zones, a WhatsApp-style chat assistant, the Kitchen Crew members&rsquo; area with deals, this season&rsquo;s pop-up markets, the studio map and Sirimon&rsquo;s socials. They differ in look and in how they move.</p>
+    <div class="grid">
+      <a class="card" href="site-a-editorial/">
+        <span class="shot"><img src="shared/img/chooser-a.webp" alt="Preview of the editorial concept: SIRIMON in tall capitals, the letters filled with melting cheese" width="1440" height="900"><b>Concept A</b></span>
+        <span class="body">
+          <span class="label">After Santo Mare, made bright</span>
+          <span class="title">Editorial</span>
+          <span class="desc">Professional and premium. The name is cut out of the page with melting cheese inside, and scrolling flies you through the letter into the melt. Tall capitals, mono labels and full-colour bands in the colours Sirimon&rsquo;s packs wear.</span>
+          <span class="tags"><span>Fly into the melt</span><span>Pinned melt reel</span><span>Dinner shuffle</span><span>Forest that grows</span></span>
+          <span class="go">Open the editorial site &rarr;</span>
+        </span>
+      </a>
+      <a class="card card--b" href="site-b-fun/">
+        <span class="shot"><img src="shared/img/chooser-b.webp" alt="Preview of the lively concept: Sirimon on hot pink with a skillet of melting cheese as the o, real packs floating around" width="1440" height="900"><b>Concept B</b></span>
+        <span class="body">
+          <span class="label">After Ruota and Palazzo, lively</span>
+          <span class="title">Lively</span>
+          <span class="desc">Fun and full of colour. A skillet of molten cheese is the o in Sirimon, a flavour dial repaints the page in each cheese&rsquo;s colour, you drag to pull a grilled cheese apart, and Sirimon&rsquo;s Weekly Munchies plans turn into a shopping list.</span>
+          <span class="tags"><span>Turn the flavour dial</span><span>Pull it apart</span><span>Weekly munchies planner</span><span>Fridge that fills</span></span>
+          <span class="go">Open the lively site &rarr;</span>
+        </span>
+      </a>
+    </div>
+    <div class="shared">
+      <strong>In both</strong>
+      <ul><li>Cheese list with WhatsApp ordering</li><li>Real shop prices and pack sizes</li><li>Nairobi delivery zones and markets pick-up</li><li>WhatsApp-style chat assistant</li><li>Kitchen Crew login, deals and points</li><li>23 recipes from the recipe bank</li><li>Cheese for Trees counter</li><li>Platter pre-orders</li><li>Meet the makers and Moses&rsquo;s film</li><li>Google Maps and live opening hours</li><li>Instagram, Facebook and WhatsApp</li></ul>
+    </div>
+    <p class="demo">Try the Kitchen Crew with the demo member: <code>crew@sirimon.co.ke</code> and the password <code>cheese</code>.</p>
+    <footer>Prepared as a pitch for Sirimon Cheese, Laikipia. Brand material belongs to Sirimon Cheese. Laptop first; best viewed full screen.</footer>
+  </div>
+<script>
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('.card').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--rx', ((0.5 - (e.clientY - r.top) / r.height) * 5).toFixed(2) + 'deg');
+        el.style.setProperty('--ry', (((e.clientX - r.left) / r.width - 0.5) * 5).toFixed(2) + 'deg');
+      });
+      el.addEventListener('pointerleave', function () { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+  })();
+</script>
+</body>
+</html>
